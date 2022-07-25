@@ -7,7 +7,7 @@ struct helpView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("To everyone:")
+                Text("develop in progress")
                     .padding()
                     .font(.largeTitle)
                 Spacer()

@@ -1,37 +1,42 @@
 import SwiftUI
 
-struct textView: View {
+struct tabnView: View {
+    @State var view = "0"
+    @State var pop = false
     var body: some View {
         ScrollView {
-            Text("You can use Text like this:")
+            Text("You can use TabBar like this:")
                 .font(.title)
             Spacer()
                 .frame(height: 50)
-            HStack {
-                textViewcodepre()
-                textViewpre()
+            VStack {
+                tabViewcodepre()
+                tabViewpre()
             }
             Spacer()
                 .frame(height: 50)
             Button("go to apple documentation") {
-                guard let url = URL(string: "https://developer.apple.com/documentation/swiftui/text") else { return }
+                guard let url = URL(string: "https://developer.apple.com/documentation/swiftui/toolbarplacement/tabbar/") else { return }
                 UIApplication.shared.open(url)
             }
             
             
             
         }
-        .navigationTitle("Text")
+        .fullScreenCover(isPresented: $pop) {
+            
+        }   
+        .navigationTitle("TabBar")
     }
 }
 
-struct textViewcodepre: View {
+struct tabViewcodepre: View {
     var body: some View {
         VStack {
             Text("Code:")
             ZStack {
                 codespace_view()
-                Image("photo 11")
+                Image("photo 12")
                     .resizable()
                     .padding()
                     .scaledToFit()
@@ -41,24 +46,21 @@ struct textViewcodepre: View {
     }
 }
 
-struct textViewpre: View {
+struct tabViewpre: View {
     var body: some View {
         VStack {
             Text("Result:")
             ZStack {
-                codespace_view()
-                Text("Swiftui")
-                    .foregroundColor(Color.black)
-                    .font(.largeTitle)
+                Image("photo 13")
+                    .resizable()
+                    .scaledToFit()
                     .padding()
             }
-            
         }
     }
 }
-struct textView_Previews: PreviewProvider {
+struct tabnView_Previews: PreviewProvider {
     static var previews: some View {
-        textView()
+        tabnView()
     }
 }
-

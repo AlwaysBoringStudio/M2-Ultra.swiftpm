@@ -1,20 +1,26 @@
 import SwiftUI
 
-struct textView: View {
+struct imageView: View {
     var body: some View {
         ScrollView {
-            Text("You can use Text like this:")
+            Text("This is how to use Image in SwiftUI")
                 .font(.title)
             Spacer()
                 .frame(height: 50)
+            Text("First, you need to add a image to Assets")
+                .font(.title)
+            Spacer()
+                .frame(height: 50)
+            Text("and you can coding like this:")
+                .font(.title)
             HStack {
-                textViewcodepre()
-                textViewpre()
+                imageViewcodepre()
+                imageViewpre()
             }
             Spacer()
                 .frame(height: 50)
             Button("go to apple documentation") {
-                guard let url = URL(string: "https://developer.apple.com/documentation/swiftui/text") else { return }
+                guard let url = URL(string: "https://developer.apple.com/documentation/swiftui/image") else { return }
                 UIApplication.shared.open(url)
             }
             
@@ -25,13 +31,13 @@ struct textView: View {
     }
 }
 
-struct textViewcodepre: View {
+struct imageViewcodepre: View {
     var body: some View {
         VStack {
             Text("Code:")
             ZStack {
                 codespace_view()
-                Image("photo 11")
+                Image("photo 14")
                     .resizable()
                     .padding()
                     .scaledToFit()
@@ -41,24 +47,25 @@ struct textViewcodepre: View {
     }
 }
 
-struct textViewpre: View {
+struct imageViewpre: View {
     var body: some View {
         VStack {
             Text("Result:")
             ZStack {
                 codespace_view()
-                Text("Swiftui")
-                    .foregroundColor(Color.black)
-                    .font(.largeTitle)
-                    .padding()
+                Image("swiftui")
+                    .resizable()
+                    .padding(70)
+                    .scaledToFit()
             }
             
         }
     }
 }
-struct textView_Previews: PreviewProvider {
+struct imageView_Previews: PreviewProvider {
     static var previews: some View {
-        textView()
+        imageView()
     }
 }
+
 

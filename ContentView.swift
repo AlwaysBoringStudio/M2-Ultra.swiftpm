@@ -19,7 +19,7 @@ struct ContentView: View {
                             Text("What is SwiftUI")
                         }
                     }
-                    NavigationLink(destination: helpView(time: "24-07-2022 02:08")) {
+                    NavigationLink(destination: whyswiftuiView()) {
                         VStack {
                             Text("Why use SwiftUI")
                         }
@@ -37,7 +37,7 @@ struct ContentView: View {
                             Text("NavigationView")
                         }
                     }
-                    NavigationLink(destination: helpView(time: "24-07-2022 02:11")) {
+                    NavigationLink(destination: tabnView()) {
                         VStack {
                             Text("TabView")
                         }
@@ -63,7 +63,7 @@ struct ContentView: View {
                     }
                 }
                 Section(header: Text("Other")) {
-                    NavigationLink(destination: helpView(time: "24-07-2022 02:10")) {
+                    NavigationLink(destination: imageView()) {
                         VStack {
                             Text("Image")
                         }

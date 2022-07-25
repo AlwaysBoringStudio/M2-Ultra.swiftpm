@@ -144,6 +144,8 @@ struct vstackViewpre: View {
                     Text("Hello World")
                         .foregroundColor(Color.black)
                     Image("swiftui")
+                        .resizable()
+                        .frame(width: 90, height: 90)
                     Text("Hello World 2")
                         .foregroundColor(Color.black)
                 }
@@ -177,6 +179,8 @@ struct hstackViewpre: View {
                     Text("Hello World")
                         .foregroundColor(Color.black)
                     Image("swiftui")
+                        .resizable()
+                        .frame(width: 90, height: 90)
                     Text("Hello World 2")
                         .foregroundColor(Color.black)
                 }
