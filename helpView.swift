@@ -32,13 +32,7 @@ struct helpView: View {
 
 struct note: View {
     var body: some View {
-        List {
-            Text("""
-1. Make "What is SwiftUI" First
-""")
-            Text("2. Make how to use Text in SwiftUI")
-        }
-        .navigationTitle("note")
+        Text("為了方便開發, 向下滑動可拉出開發人員選項")
     }
 }
 

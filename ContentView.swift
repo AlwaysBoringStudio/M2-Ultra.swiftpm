@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var welcomescreen: Bool
-    @State var debug = false
+    @State var debugview = false
     var body: some View {
         NavigationView {
             List {
@@ -76,27 +76,6 @@ struct ContentView: View {
                         }
                     }
                 }
-                //debug
-                if debug == true {
-                    Section(header: Text("Debug and note")) {
-                        NavigationLink(destination: note()) {
-                            VStack {
-                                Text("Note")
-                            }
-                        }
-                        Button("Open project website") {
-                            guard let url = URL(string: "http://link.alwaysboringstudio.site/J3H9") else { return }
-                            UIApplication.shared.open(url)
-                        }
-                        NavigationLink(destination: vstackViewcodepre().navigationTitle("debug")) {
-                            VStack {
-                                Text("CodeSpace")
-                            }
-                        }                    }
-                } else {
-                    
-                }
-                //debug end
                 
             }
             .navigationTitle("SwiftUI")
@@ -110,13 +89,43 @@ struct ContentView: View {
                     .padding()
                 Button("Start") {
                 welcomescreen = false
-                }
-                Button("Debug") {
-                    welcomescreen = false
-                    debug = true
-                }
-                .padding()
+                }                .padding()
             }
+        }
+        .fullScreenCover(isPresented: $debugview) {
+            NavigationView {
+                List {
+                    Section(header: Text("TOOLS")) {
+                        note()
+                        Button("Open project website") {
+                            guard let url = URL(string: "http://link.alwaysboringstudio.site/J3H9") else { return }
+                            UIApplication.shared.open(url)
+                        }
+                        
+                    }
+                    Section(header: Text("Views")) {
+                        NavigationLink(destination: vstackViewcodepre().navigationTitle("debug")) {
+                            VStack {
+                                Text("CodeSpace")
+                            }
+                        }  
+                        
+                    }
+                    HStack {
+                        Spacer()
+                        Button("離開開發人員選項") {
+                            debugview = false
+                        }
+                        .foregroundColor(.red)
+                        Spacer()
+                    }
+                    
+                }
+                .navigationTitle("Developer options")
+            }
+        }
+        .refreshable {
+            debugview = true
         }
     }
 }

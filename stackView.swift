@@ -39,6 +39,8 @@ struct stackView: View {
                     zstackViewcodepre()
                     zstackViewpre()
                 }
+                Spacer()
+                    .frame(height: 50)
                 Button("go to apple documentation") {
                     guard let url = URL(string: "https://developer.apple.com/documentation/swiftui/zstack") else { return }
                     UIApplication.shared.open(url)
@@ -53,6 +55,8 @@ struct stackView: View {
                     hstackViewcodepre()
                     hstackViewpre()
                 }
+                Spacer()
+                    .frame(height: 50)
                 Button("go to apple documentation") {
                     guard let url = URL(string: "https://developer.apple.com/documentation/swiftui/hstack") else { return }
                     UIApplication.shared.open(url)
@@ -67,6 +71,8 @@ struct stackView: View {
                     vstackViewcodepre()
                     vstackViewpre()
                     }
+                Spacer()
+                    .frame(height: 50)
                 Button("go to apple documentation") {
                     guard let url = URL(string: "https://developer.apple.com/documentation/swiftui/vstack") else { return }
                     UIApplication.shared.open(url)
@@ -106,10 +112,12 @@ struct zstackViewpre: View {
                 codespace_view()
                 ZStack {
                     Text("Hello World")
-                        .foregroundColor(Color.black)
+                        .foregroundColor(Color.white)
                     Image("swiftui")
+                        .resizable()
+                        .frame(width: 90, height: 90)
                     Text("Hello World 2")
-                        .foregroundColor(Color.black)
+                        .foregroundColor(Color.white)
                 }
             }
             
