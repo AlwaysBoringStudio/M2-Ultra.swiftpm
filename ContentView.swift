@@ -109,7 +109,7 @@ struct ContentView: View {
                     }
                     HStack {
                         Spacer()
-                        Button("Quit developer options") {
+                        Button("Exit developer options") {
                             debugview = false
                         }
                         .foregroundColor(.red)

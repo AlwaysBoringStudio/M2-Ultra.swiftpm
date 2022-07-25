@@ -71,19 +71,24 @@ struct WelcomeScreen: View {
     var body: some View {
         VStack {
             Spacer()
-            Text("Welcome to CodeWithSwiftUI")
+            Text("Welcome to")
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .multilineTextAlignment(.center)
-                .padding(.horizontal, 48)
+            Text("CodeWithSwiftUI")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .multilineTextAlignment(.center)
             Spacer()
             
             VStack(spacing: 24) {
                 FeatureCell(image: "swift", title: "Learn how to code", subtitle: "You can learn how to coding with SwiftUI in this app.", color: .red)
                 
-                FeatureCell(image: "hammer.fill", title: "develop in progress", subtitle: "swipe down to pull up developer options", color: .blue)
+                FeatureCell(image: "hammer.fill", title: "developer options", subtitle: "swipe down to pull up developer options", color: .blue)
                 
-                FeatureCell(image: "exclamationmark.triangle.fill", title: "develop in progress", subtitle: "This welcome view are develop in progress.", color: .yellow)
+                FeatureCell(image: "info.circle.fill", title: "Version", subtitle: "App version: 1.0 (Build 4)", color: .gray)
+                
+                //FeatureCell(image: "exclamationmark.triangle.fill", title: "develop in progress", subtitle: "This welcome view are develop in progress.", color: .yellow)
             }
             .padding(.leading)
             
