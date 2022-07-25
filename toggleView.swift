@@ -51,7 +51,6 @@ struct toggleViewcodepre: View {
 }
 
 struct toggleViewpre: View {
-    
     @State var on = false
     var body: some View {
         VStack {
@@ -60,15 +59,29 @@ struct toggleViewpre: View {
                 
                 codespace_view()
                 ZStack {
-                    List {
-                        Toggle(isOn: $on) {
-                            Text("on/off ?")
-                        }
-                    }
+                    toggleViewlistpre()
                     .cornerRadius(25)
                     
                 }
             }
+            
+        }
+    }
+}
+struct toggleViewlistpre: View {
+    init() {
+        UITableView.appearance().separatorStyle = .none
+        UITableViewCell.appearance().backgroundColor = UIColor(Color(red: 239/255, green: 239/255, blue: 239/255))
+        UITableView.appearance().backgroundColor = UIColor(Color(red: 239/255, green: 239/255, blue: 239/255))
+    }
+    @State var on = false
+    var body: some View {
+        List {
+            Toggle(isOn: $on) {
+                Text("on/off ?")
+                    .foregroundColor(.black)
+            }
+            .listRowBackground(Color.white)
             
         }
     }

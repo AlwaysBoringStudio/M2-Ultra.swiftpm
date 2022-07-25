@@ -83,14 +83,7 @@ struct ContentView: View {
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .fullScreenCover(isPresented: $welcomescreen) {
-            VStack {
-                Text("Welcome, you can learn SwiftUI in this App.")
-                    .font(.title)
-                    .padding()
-                Button("Start") {
-                welcomescreen = false
-                }                .padding()
-            }
+            WelcomeScreen(showWelcomeScreen: $welcomescreen)
         }
         .fullScreenCover(isPresented: $debugview) {
             NavigationView {
@@ -109,11 +102,14 @@ struct ContentView: View {
                                 Text("CodeSpace")
                             }
                         }  
+                        Button("Bring up Welcome Screen") {
+                            welcomescreen = true
+                        }
                         
                     }
                     HStack {
                         Spacer()
-                        Button("離開開發人員選項") {
+                        Button("Quit developer options") {
                             debugview = false
                         }
                         .foregroundColor(.red)
