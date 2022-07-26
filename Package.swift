@@ -19,7 +19,7 @@ let package = Package(
             bundleIdentifier: "com.alwaysboringstudio.m2ultra",
             teamIdentifier: "UGQBX3P3M8",
             displayVersion: "1.0",
-            bundleVersion: "5",
+            bundleVersion: "7",
             appIcon: .asset("AppIcon"),
             accentColor: .presetColor(.blue),
             supportedDeviceFamilies: [

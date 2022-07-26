@@ -78,9 +78,10 @@ struct ContentView: View {
                 }
                 
             }
-            .navigationTitle("SwiftUI")
             
+            .navigationTitle("SwiftUI")
         }
+        
         .navigationViewStyle(StackNavigationViewStyle())
         .fullScreenCover(isPresented: $welcomescreen) {
             WelcomeScreen(showWelcomeScreen: $welcomescreen)
@@ -92,6 +93,10 @@ struct ContentView: View {
                         note()
                         Button("Open project website") {
                             guard let url = URL(string: "http://link.alwaysboringstudio.site/J3H9") else { return }
+                            UIApplication.shared.open(url)
+                        }
+                        Button("View source code") {
+                            guard let url = URL(string: "https://github.com/AlwaysBoringStudio/M2-Ultra.swiftpm/find/main") else { return }
                             UIApplication.shared.open(url)
                         }
                         
@@ -119,6 +124,7 @@ struct ContentView: View {
                 }
                 .navigationTitle("Developer options")
             }
+            
         }
         .refreshable {
             debugview = true

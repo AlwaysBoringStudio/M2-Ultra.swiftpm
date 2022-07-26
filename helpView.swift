@@ -86,7 +86,7 @@ struct WelcomeScreen: View {
                 
                 FeatureCell(image: "hammer.fill", title: "developer options", subtitle: "swipe down to pull up developer options", color: .blue)
                 
-                FeatureCell(image: "info.circle.fill", title: "Version", subtitle: "App version: 1.0 (Build 4)", color: .gray)
+                FeatureCell(image: "info.circle.fill", title: "Version", subtitle: "App version: 1.0 (Build 8)", color: .gray)
                 
                 //FeatureCell(image: "exclamationmark.triangle.fill", title: "develop in progress", subtitle: "This welcome view are develop in progress.", color: .yellow)
             }
